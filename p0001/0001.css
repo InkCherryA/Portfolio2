@@ -69,6 +69,13 @@
     justify-content: center;
 }
 
+@media (max-aspect-ratio: 2/3) {
+    .flexdiv {
+        flex-direction: column;
+        justify-content: start;
+    }
+}
+
 .flexchild {
     height: auto;
     width: 100%;
@@ -89,31 +96,61 @@
     aspect-ratio: 1/1;
 }
 
-.flipbook {
+/* .flipbook {
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     scroll-snap-type: y mandatory;
-    height: 300px;
-    width: 80vw;
+    //height: 70vh;
+    width: fit-content;
     align-items: center;
-    justify-content: center;
-    scroll-behavior: instant;
-    
+    max-width: 80vw;
+} */
+
+.flipbook {
+    margin: 10px auto;
+	width: 360px;
+	height: 200px;
+	border: 1px solid #999;
+	overflow: hidden;
+}
+
+#fb1 {
+    aspect-ratio: 4/3;
+}
+
+#fb2 {
+    aspect-ratio: 8/3;
+}
+
+.flipbook::-webkit-scrollbar {
+    width: 5px;
+    background-color: #ddd;
+}
+
+.flipbook::-webkit-scrollbar-thumb {
+    background: rgb(98, 98, 98);
+    border-radius: 2px;
 }
 
 .flipchild {
-    position: relative;
+    /* position: relative;
     scroll-snap-align: start;
-    width: auto;
-    height: 300px;
+    max-width: 80vw;
+    aspect-ratio: 4/3; */
+
+    width: 100%;
 }
 
-#flip2 {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100vw;
-    max-height: 100vh;
+.flipchild .flexchild {
+    padding: 0;
+    max-width: 80vw;
+    aspect-ratio: 4/3;
+}
+
+.flipbook .flexdiv {
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
 }
