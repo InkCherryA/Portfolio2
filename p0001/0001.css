@@ -111,12 +111,12 @@
 .flipbook {
     margin: 10px auto;
 	width: 360px;
-	height: 200px;
+	height: 270px;
 	border: 1px solid #999;
 	overflow: hidden;
 }
 
-#fb1 {
+#swiper {
     aspect-ratio: 4/3;
 }
 
